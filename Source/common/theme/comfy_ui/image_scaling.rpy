@@ -24,7 +24,7 @@ init -999 python in comfy_ui:
     def monkey_new(cls, filename = "", **properties):
         filename, is_comfy_asset = comfy_path(filename)
 
-        new_instance = super(Image, cls).__new__(cls, filename, **properties)
+        new_instance = super(Image, cls).__new__(cls)
         new_instance.__init__(filename, **properties)
 
         if is_comfy_asset:
@@ -35,7 +35,7 @@ init -999 python in comfy_ui:
     Image.__new__ = staticmethod(monkey_new)
 
     # HACK: monkey patch for dynamic image path interpolation
-    def monkey_dynamic_image(d, scope = None, prefix = None):
+    def monkey_dynamic_image(d, scope = None, prefix = None, *args, **kwargs):
         if not isinstance(d, list):
             d = [d]
 
