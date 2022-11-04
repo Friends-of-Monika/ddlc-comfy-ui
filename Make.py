@@ -11,7 +11,7 @@ import re
 import shutil
 from argparse import ArgumentParser
 from pathlib import Path
-from subprocess import Popen, PIPE, STDOUT
+from subprocess import Popen, PIPE, STDOUT, DEVNULL
 
 import freetype
 from PIL import Image
@@ -217,7 +217,7 @@ def glitch(image_path, glitch_path, scale):
         image.save(image_path)
 
 def install_fonts(fonts):
-    proc = Popen("inkscape --actions=\"user-data-directory;\"", stdout = PIPE)
+    proc = Popen(["inkscape", '--actions=user-data-directory'], stdout = PIPE)
     stdout, _ = proc.communicate()
     proc.wait()
 
@@ -232,7 +232,7 @@ def install_fonts(fonts):
             break
 
 def batch_render(images, scale):
-    proc = Popen("inkscape --shell", stdin = PIPE, stdout = PIPE, stderr = STDOUT, shell = True)
+    proc = Popen(["inkscape", "--shell"], stdin = PIPE, stdout=DEVNULL)
 
     cmd = ""
 
@@ -244,7 +244,7 @@ def batch_render(images, scale):
         cmd += f"export-filename:{png_path};"
         cmd += f"export-overwrite;"
         cmd += f"export-type:png;"
-        cmd += f"export-do;"
+        cmd += f"export-do"
         cmd += "\n"
 
     proc.communicate(input = cmd.encode(), timeout = 600)
