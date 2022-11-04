@@ -33,7 +33,7 @@ screen comfy_ui_settings_pane(apply_label, disable_label):
                 hbox:
                     xfill True
 
-                    label _("Theme: [theme_name]"):
+                    text _("Theme: [theme_name]"):
                         style "slider_label"
 
                     textbutton _("Preview"):
@@ -98,3 +98,14 @@ screen comfy_ui_settings_pane(apply_label, disable_label):
 
     else:
         label _("No themes available.")
+
+init python:
+    import random
+
+    nonunicode = "¡¢£¤¥¦§¨©ª«¬®¯°±²³´µ¶·¸¹º»¼½¾¿ÀÁÂÃÄÅÆÇÈÉÊËÌÍÎÏÐÑÒÓÔÕÖ×ØÙÚÛÜÝÞßàáâãäåæçèéêëìíîïðñòóôõö÷øùúûüýþÿĀāĂăĄąĆćĈĉĊċČčĎďĐđĒēĔĕĖėĘęĚěĜĝĞğĠġĢģĤĥĦħĨĩĪīĬĭĮįİıĲĳĴĵĶķĸĹĺĻļĽľĿŀŁłŃńŅņŇňŉŊŋŌōŎŏŐőŒœŔŕŖŗŘřŚśŜŝŞşŠšŢţŤťŦŧŨũŪūŬŭŮůŰűŲųŴŵŶŷŸŹźŻżŽž"
+
+    def glitchtext(length):
+        output = ""
+        for x in range(length):
+            output += random.choice(nonunicode)
+        return output
