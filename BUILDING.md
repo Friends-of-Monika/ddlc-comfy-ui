@@ -22,11 +22,12 @@ For building ComfyUI you'll need:
 
 ### Setting up environment
 
-Before you proceed to installing dependencies, create Python virtual
+Before you proceed to installing dependencies, create and enter Python virtual
 environment:
 
 ```shell
 python3 -m venv venv
+source venv/bin/activate
 ```
 
 ### Installing dependencies
