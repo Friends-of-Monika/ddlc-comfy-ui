@@ -11,7 +11,7 @@ init -990 python in mas_submod_utils:
         coauthors       = ["Friends of Monika"],
         name            = "Comfy UI",
         description     = "Smooth and customizable UI add-on.",
-        version         = "2.0.1",
+        version         = "2.0.2",
         dependencies    = {},
         settings_pane   = "comfy_ui_mas_settings_pane",
         version_updates = {}
