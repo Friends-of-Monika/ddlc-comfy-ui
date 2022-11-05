@@ -43,5 +43,8 @@ python3 -m pip install -r requirements.txt
 Once everything is set, run the following command to build submod:
 
 ```shell
-python3 Make.py -t mas
+python3 Make.py -rt mas
 ```
+
+Once build completes, you'll see `Release.zip` in the project folder. This is
+the submod package you can now use to distribute the submod.
