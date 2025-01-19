@@ -5,6 +5,8 @@
 # See LICENSE file for the licensing information
 #
 ################################################################################
+# pylint: skip-file
+
 import itertools
 import json
 import re
