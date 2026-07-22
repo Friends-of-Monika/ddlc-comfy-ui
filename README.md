@@ -1,6 +1,9 @@
 # DDLC Comfy UI
 <img src="Logo.png?raw=true">
 
+> [!WARNING]
+> This repository of ComfyUI is no longer maintained, development is continued as [CozyUI](https://github.com/Friends-of-Monika/mas-cozyui) project.
+
 ---
 Hey, I'm no writer, so just skip to the **Features** section, okay?
 
